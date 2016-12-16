@@ -1,0 +1,32 @@
+package day16;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.testng.annotations.Test;
+
+public class KeywordScript 
+{
+	@Test
+	public void key() throws IOException
+	{
+		String xlpath="F:\\Vinay_Ramakanth_Chandra\\SeleniumProject\\src\\testdata\\Keyword.xlsx";
+		FileInputStream fi=new FileInputStream(xlpath);
+		XSSFWorkbook wb=new XSSFWorkbook(fi);
+		XSSFSheet ws=wb.getSheet("Testcase");
+		XSSFSheet ws1=wb.getSheet("Teststeps");
+		
+		int TcRc=ws.getLastRowNum();
+		int TsRc=ws1.getLastRowNum();
+		//Tc Sheet
+		for (int i = 1; i <= TcRc; i++) 
+		{
+			String exe=ws.getRow(i).getCell(2).getStringCellValue();
+			
+		}
+	}
+	
+
+}

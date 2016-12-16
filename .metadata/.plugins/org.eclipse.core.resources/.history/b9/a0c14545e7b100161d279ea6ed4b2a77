@@ -1,0 +1,21 @@
+package day4;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+public class Examples {
+
+	public static void main(String[] args)
+	{
+		WebDriver driver=new FirefoxDriver();
+		driver.get("http://google.com");
+		
+		driver.manage().window().maximize();
+		
+		String pValue=driver.findElement(By.linkText("Gmail")).getAttribute("href");
+		
+		System.out.println(pValue);
+	}
+
+}
